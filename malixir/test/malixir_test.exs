@@ -1,7 +1,7 @@
 defmodule MalixirTest do
   use ExUnit.Case, async: true
 
-  describe "arabicToRoman/1" do
+  describe "arabicToRoman/2" do
     test "one" do
       assert Malixir.arabicToRoman(1) == "I"
     end
@@ -145,6 +145,87 @@ defmodule MalixirTest do
     test "threethousandninehundredninetynine" do
       assert Malixir.arabicToRoman(3999) == "MMMCMXCIX"
     end
+  end
 
+  describe "romanToArabic/1" do
+    test "I" do
+      assert Malixir.romanToArabic("I") == 1
+    end
+
+    test "II" do
+      assert Malixir.romanToArabic("II") == 2
+    end
+
+    test "III" do
+      assert Malixir.romanToArabic("III") == 3
+    end
+
+    test "IV" do
+      assert Malixir.romanToArabic("IV") == 4
+    end
+
+    test "V" do
+      assert Malixir.romanToArabic("VI") == 6
+    end
+
+    test "VI" do
+      assert Malixir.romanToArabic("VI") == 6
+    end
+
+    test "IX" do
+      assert Malixir.romanToArabic("IX") == 9
+    end
+
+    test "XI" do
+      assert Malixir.romanToArabic("XI") == 11
+    end
+
+    test "XIV" do
+      assert Malixir.romanToArabic("XIV") == 14
+    end
+
+    test "XVI" do
+      assert Malixir.romanToArabic("XVI") == 16
+    end
+
+    test "XXI" do
+      assert Malixir.romanToArabic("XXI") == 21
+    end
+
+    test "XL" do
+      assert Malixir.romanToArabic("XL") == 40
+    end
+
+    test "LX" do
+      assert Malixir.romanToArabic("LX") == 60
+    end
+
+    test "LXIX" do
+      assert Malixir.romanToArabic("XLIX") == 49
+    end
+
+    test "XC" do
+      assert Malixir.romanToArabic("XC") == 90
+    end
+
+    test "CX" do
+      assert Malixir.romanToArabic("CXI") == 111
+    end
+
+    test "CCXC" do
+      assert Malixir.romanToArabic("CCXC") == 290
+    end
+
+    test "CDXC" do
+      assert Malixir.romanToArabic("CDXC") == 490
+    end
+
+    test "MLXVI" do
+      assert Malixir.romanToArabic("MLXVI") == 1066
+    end
+
+    test "MCMLXXXIX" do
+      assert Malixir.romanToArabic("MCMLXXXIX") == 1989
+    end
   end
 end

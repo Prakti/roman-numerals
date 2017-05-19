@@ -25,4 +25,35 @@ defmodule Malixir do
     end
   end
 
+  @doc """
+  Converts from roman to arabic numbers
+  """
+  def romanToArabic(romanNum) do
+    digitList = String.graphemes(romanNum)
+    processRomanDigits(digitList, -1, 0)
+  end
+
+  def processRomanDigits(digitList, lastValue, arabicNum) do
+    if Enum.empty?(digitList) do
+      arabicNum
+    else
+      [digit | rest] = digitList
+      value = case digit do
+        "I" -> 1
+        "V" -> 5
+        "X" -> 10
+        "L" -> 50
+        "C" -> 100
+        "D" -> 500
+        "M" -> 1000
+      end
+
+      cond do
+        lastValue == -1 -> processRomanDigits(rest, value, arabicNum + value)
+        value <= lastValue -> processRomanDigits(rest, value, arabicNum + value)
+        value > lastValue -> processRomanDigits(rest, value, arabicNum + value - (lastValue * 2))
+      end
+    end
+  end
+
 end
