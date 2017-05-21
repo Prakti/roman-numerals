@@ -61,3 +61,52 @@ main = hspec $ do
 
     it "Converts 2000 to MM" $ do
       (arabicToRoman 2000) `shouldBe` "MM"
+
+  describe "romanToArabic" $ do
+    it "Converts I to 1" $ do
+      (romanToArabic "I") `shouldBe` 1
+
+    it "Converts II to 2" $ do
+      (romanToArabic "II") `shouldBe` 2
+
+    it "Converts IV to 4" $ do
+      (romanToArabic "IV") `shouldBe` 4
+
+    it "Converts VI to 6" $ do
+      (romanToArabic "VI") `shouldBe` 6
+
+    it "Converts IX to 9" $ do
+      (romanToArabic "IX") `shouldBe` 9
+
+    it "Converts XI to 11" $ do
+      (romanToArabic "XI") `shouldBe` 11
+
+    it "Converts XL to 40" $ do
+      (romanToArabic "XL") `shouldBe` 40
+
+    it "Converts L to 50" $ do
+      (romanToArabic "L") `shouldBe` 50
+
+    it "Converts LX to 60" $ do
+      (romanToArabic "LX") `shouldBe` 60
+
+    it "Converts XC to 90" $ do
+      (romanToArabic "XC") `shouldBe` 90
+
+    it "Converts C to 100" $ do
+      (romanToArabic "C") `shouldBe` 100
+
+    it "Converts CD to 400" $ do
+      (romanToArabic "CD") `shouldBe` 400
+
+    it "Converts DC to 600" $ do
+      (romanToArabic "DC") `shouldBe` 600
+
+    it "Converts CM to 900" $ do
+      (romanToArabic "CM") `shouldBe` 900
+
+    it "Converts MC to 1100" $ do
+      (romanToArabic "MC") `shouldBe` 1100
+
+    it "Converts MM to 2000" $ do
+      (romanToArabic "MM") `shouldBe` 2000
