@@ -1,6 +1,7 @@
 module Lib
-    ( someFunc
-    ) where
+  ( arabicToRoman
+  ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+arabicToRoman :: Integer -> [Char]
+arabicToRoman arabic
+  | otherwise = [ 'I' | _ <- [1..arabic]]
